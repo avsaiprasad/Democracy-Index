@@ -1,0 +1,169 @@
+---
+title: "Module Project 2: Interactive Visualization Assignment"
+subtitle: "INSH 5302 -  Information Design & Visual Analytics"
+author: "ENTER YOUR NAME HERE"
+date: "April 21, 2024"
+output:
+  html_document:
+    code_download: true
+    fig_caption: yes
+    theme: lumen
+    toc: yes
+    toc_depth: 2
+    df_print: kable
+    toc_float:
+      collapsed: no
+---
+
+```{r, message=FALSE}
+# Required packages for our course. Do not delete.
+library(tidyverse)
+library(mosaic)
+```
+
+# Big-picture
+
+## Research Question
+
+In this Project, I want to visualize the State of Democracy across the world. With the data of Democracy index, which is an index measuring state of democracy, I want to show the insights of each country from 2010-2022.
+
+* * *
+
+# Data
+
+## Description of data
+
+The Data is taken from two sources
+1. https://www.eiu.com/n/campaigns/democracy-index-2022/
+In this data, I have data of countries with their continents along with their Democracy Index from 2010-2022.
+2. https://www.kaggle.com/datasets/cesalexguz/democracydictatorship-by-country
+This data is having information of each country's population and the type of government of year 2020.
+
+## Load data into R
+
+*Include the code to load your data here. Using the head() function, show the first 10 rows of data. *
+
+```{r, message = FALSE, warning = FALSE}
+DI <- read.csv('democracy_countries_list (1111)_democracy_countries_list.csv')
+GC <- read.csv('democracy_dictatorship by country.csv')
+```
+
+* * *
+
+# Variables
+
+*Using the names() function, show the names of all the columns (i.e. potential variables) in your data set. Delete this when complete.*
+```{r, message = FALSE, warning = FALSE}
+names(DI)
+names(GC)
+```
+
+The variables I used in my infographic design are:
+
+1. Country
+2. Continent
+3. Elections Year
+4. Regime.Type
+5. Rank
+6. Value
+7. Population
+8. Type
+9. Subtype
+
+> NOTE: TIME MUST BE ONE OF YOUR VARIABLES FOR THE MODULE 2 PROJECT!
+
+* * *
+
+# Data Analysis
+
+## Summary Statistics
+
+*Using the favstats() function, calculate the necessary statistics you used to create your data visualization. Delete this when complete.*
+```{r, message = FALSE, warning = FALSE}
+favstats('DI')
+favstats('GC')
+```
+
+> Provide the high-level insights you used to craft your data visualization design.
+
+## Additional Analyses
+
+*If you conducted any other analyses of your data set to gather the data in your project, use this section to conduct your research. Delete this when complete.*
+```{r, message = FALSE, warning = FALSE}
+
+```
+
+* * *
+
+# Final Project
+
+* * *
+
+# Project Proposal
+
+The Final Project allows students to choose between all the options from our course projects. You should denote which option you plan to pursue and provide a brief overview of your vision for the project. Your Final Project should be **more detailed** and **more robust**. 
+
+Below are the options available. Students should denote which option they will be pursuing by **deleting the other options that they will not be pursuing**.
+
+Students will provide:
+
+ - An Introduction,
+ - The Project Vision,
+ - An Explanation of the Project Expansion,
+ - A Reflection and Conclusion
+
+* * *
+
+* * *
+## Option 3 | Interactive Tableau Dashboard
+Students will create an interactive Tableau dashboard that provides insights and analysis that answers their research question. Students must have a minimum of **8 interactive graphs**, each on their own story point.
+
+### Submissions for Option 3
+
+- Completed `FP-final_submission-template.rmd` submitted as an HTML file.
+  - Published Tableau Public Dashboard Link: This link should be included in the section denoted in the FP-final_submission-template.rmd.
+  
+  
+<div class='tableauPlaceholder' id='viz1713770428582' style='position: relative'><noscript><a href='#'><img alt='A decade in Democaracy(2010-2022) ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;DemocracyIndex_17137697328280&#47;AdecadeinDemocaracy2010-2022&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='embed_code_version' value='3' /> <param name='site_root' value='' /><param name='name' value='DemocracyIndex_17137697328280&#47;AdecadeinDemocaracy2010-2022' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;De&#47;DemocracyIndex_17137697328280&#47;AdecadeinDemocaracy2010-2022&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /><param name='language' value='en-US' /><param name='filter' value='publish=yes' /></object></div>           
+
+
+
+
+```{js, embedcode, echo = FALSE}
+
+ var divElement = document.getElementById('viz1713770428582');                    var vizElement = divElement.getElementsByTagName('object')[0];                    if ( divElement.offsetWidth > 800 ) { vizElement.style.width='1200px';vizElement.style.height='5027px';} else if ( divElement.offsetWidth > 500 ) { vizElement.style.width='1200px';vizElement.style.height='5027px';} else { vizElement.style.width='100%';vizElement.style.height='4627px';}                     var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);  
+```
+
+###Tableau Public Link
+https://public.tableau.com/views/DemocracyIndex_17137697328280/AdecadeinDemocaracy2010-2022?:language=en-US&publish=yes&:sid=&:display_count=n&:origin=viz_share_link
+
+### Introduction
+
+ Visualizing the State of Democracy across the world. With the data of Democracy index, which is an index measuring state of democracy, I want to show the insights of 167 countries across the globe from 2010-2022.
+
+#### Project Vision 
+
+The vision for this project is on the State of Democracy globally, using data from 2010 to 2022, is to create a compelling, interactive visualization tool that highlights the evolution and current state of democracy across different countries and continents. By categorizing countries into Full Democracies, Flawed Democracies, Hybrid Regimes, and Authoritarian Regimes, and exploring the correlation between population sizes and democracy levels, this dashboard aims to provide users with deep insights into the dynamics of global governance. The goal is to illuminate trends, challenges, and the global average of the Democracy Index, thereby fostering a more informed and nuanced understanding of how democracy operates worldwide, encouraging engagement and discussion on the future of global democratic practices.
+
+### Explanation of Project Expansion
+
+This project envisions creating a rich, interactive platform that educates and engages its audience on the complexities and nuances of democracy worldwide. Enhanced Geographic and Comparative Analysis includes detailed insights across each continent now categorizes countries into Full Democracies, Flawed Democracies, Hybrid Regimes, and Authoritarian Regimes, based on their Democracy Index scores allows for a more detailed investigation. The integration with population data showing relationship between population size and democracy levels
+
+### Reflection and Conclusion
+
+Less than one-half (45.7%) of the world's population live in a democracy of some sort. Even fewer (6.4%) reside in a "full democracy." More than one-third of the world's population lives under authoritarian rule.
+
+* * *
+
+# References
+
+*Include any references that you might have used to construct your graphic. This may include, but is not limited to citations for: graphics used, coding techniques, data collection, R-Markdown/RStudio documentation, etc. Delete this when complete.*
+
+1. https://www.eiu.com/n/campaigns/democracy-index-2022/
+2. https://www.kaggle.com/datasets/cesalexguz/democracydictatorship-by-country
+
+* * *
+
+## All done!
+
+Knit the completed R Markdown file as a HTML document (click the "Knit" button at the top of the script editor window) and upload it to the submission portal on Canvas.
